@@ -1,0 +1,28 @@
+{
+  "name": "fubukbot",
+  "version": "1.0.0",
+  "description": "mfw when the",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node index.js",
+    "tail": "tail -f -n 500 /root/.forever/fubukbot.log",
+    "forever": "forever start --uid fubukbot -a -c 'nodemon' index.js",
+    "foreversafe": "forever start --uid fubukbot -a index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "discord.js": "^12.5.1",
+    "dotenv": "^10.0.0",
+    "forever": "^3.0.4",
+    "gm": "^1.23.1",
+    "js-markov": "^3.0.3",
+    "node-fetch": "^2.6.1",
+    "purpl-markov-chain": "^2.0.3",
+    "reddit": "^1.2.1",
+    "string-pixel-width": "^1.10.0"
+  }
+}
