@@ -14,11 +14,11 @@ async function generateMeme(text) {
   let topText = text.slice(0, 20);
   let bottomText = text.slice(20, 40);
 
-  await downloadFile(gifURL, "./temp.gif").catch(console.error);
-  await exec("gifsicle ./temp.gif --resize-fit 350x350 --colors 256 -o ./temp.gif").catch(console.error);
-	await gifmeme.generate('./temp.gif', topText, bottomText).catch(console.error);
+  await downloadFile(gifURL, "./tmp/temp0.gif").catch(console.error);
+  await exec("gifsicle ./tmp/temp0.gif --resize-fit 350x350 --colors 256 -o ./temp.gif").catch(console.error);
+	await gifmeme.generate('./tmp/temp0.gif', topText, bottomText).catch(console.error);
   await exec("mogrify -layers 'optimize' -fuzz 7% ./tmp/temp.gif").catch(console.error);
-  await exec("gifsicle ./tmp/temp.gif --colors 128 -o meme.gif").catch(console.error);
+  await exec("gifsicle ./tmp/temp.gif --colors 128 -o ./tmp/meme.gif").catch(console.error);
 
 	return {
 		source: json.results[0].url

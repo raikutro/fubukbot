@@ -76,7 +76,7 @@ const ADMIN_COMMANDS = {
     SETTINGS.GENERAL_ON = !SETTINGS.GENERAL_ON;
 		message.channel.send(SETTINGS.GENERAL_ON ? "i'm ready." : "reverting...");
 	},
-  "fubukbot_activate_rap_battle_mode": async (message) => {
+  "fubukbot_activate_rap_battle_mode": async (message) => {
     console.log("rappin 4 jesus");
     if(SETTINGS.MODE === 1) return message.channel.send(`**RAPE** Protocol Activated. ${savedMessages.length} data points secured.`);
     
@@ -254,7 +254,7 @@ client.on('message', async (msg) => {
       let title = await generateChatMessageAsync(compileTrainingData(), promptWord, msg.cleanContent);
       let memeTitle = await generateChatMessageAsync(compileTrainingData(), promptWord, msg.cleanContent);
 			let memeData = await generateMeme(memeTitle);
-			const attachment = new Discord.MessageAttachment('./meme.gif');
+			const attachment = new Discord.MessageAttachment('./tmp/meme.gif');
       
       lastSource = memeData.source;
 
@@ -417,7 +417,7 @@ async function generateChatMessageAsync(strings, prompt, full) {
   let newStrings = strings; // Utils.shuffle(strings);
   
   if(SETTINGS.MODE === 1) {
-    return `${rapChain.generate({ from: prompt || undefined, grams: 4 }).slice(0, SETTINGS.MAX_MESSAGE_LENGTH)}
+    return `${rapChain.generate({ from: prompt || undefined, grams: 4 }).slice(0, SETTINGS.MAX_MESSAGE_LENGTH)}
 ${rapChain.generate().slice(0, SETTINGS.MAX_MESSAGE_LENGTH)}
 ${rapChain.generate().slice(0, SETTINGS.MAX_MESSAGE_LENGTH)}
 ${rapChain.generate().slice(0, SETTINGS.MAX_MESSAGE_LENGTH)}
