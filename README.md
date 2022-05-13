@@ -2,7 +2,7 @@
 
 Uses node.js.
 
-Code sucks bad.
+Code sucks.
 
 Don't expect any updates.
 
