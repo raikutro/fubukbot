@@ -11,7 +11,7 @@
     "foreversafe": "forever start --uid fubukbot -a index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "denki, unfortunately",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.5",

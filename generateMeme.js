@@ -15,7 +15,7 @@ async function generateMeme(text) {
   let bottomText = text.slice(20, 40);
 
   await downloadFile(gifURL, "./tmp/temp0.gif").catch(console.error);
-  await exec("gifsicle ./tmp/temp0.gif --resize-fit 350x350 --colors 256 -o ./temp.gif").catch(console.error);
+  await exec("gifsicle ./tmp/temp0.gif --resize-fit 350x350 --colors 256 -o ./tmp/temp.gif").catch(console.error);
 	await gifmeme.generate('./tmp/temp0.gif', topText, bottomText).catch(console.error);
   await exec("mogrify -layers 'optimize' -fuzz 7% ./tmp/temp.gif").catch(console.error);
   await exec("gifsicle ./tmp/temp.gif --colors 128 -o ./tmp/meme.gif").catch(console.error);

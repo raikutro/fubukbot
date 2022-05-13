@@ -1,3 +1,7 @@
+// =====================================
+// Made with pure hatred. 💀
+// =====================================
+
 require('dotenv').config();
 
 const fs = require('fs');
@@ -17,7 +21,7 @@ const reddit = new Reddit({
   password: process.env.REDDIT_PASSWORD,
   appId: process.env.REDDIT_APPID,
   appSecret: process.env.REDDIT_APPSECRET,
-  userAgent: 'MyApp/1.0.0 (http://example.com)'
+  userAgent: 'Fubukbot/1.0.0 (https://hololive.tv)'
 })
 
 console.log(MIND_DATA.length);
@@ -55,9 +59,6 @@ const ADMIN_COMMANDS = {
 	"$clear": async (message) => {
 		savedMessages = [];
 		message.channel.send("**Deleted all training data**");
-	},
-	"$save": (message) => {
-		message.channel.send("**Saved all training data**");
 	},
 	"$log": (message) => {
 		console.log({messagesNeededUntilNextReply, messagesSinceLastReply});
