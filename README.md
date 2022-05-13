@@ -2,7 +2,7 @@
 
 Uses node.js.
 
-Code sucks.
+Code sucks. I didn't test any of it either lol. but cmon its just a markov chain generator how complex really is this rustbucket??
 
 Don't expect any updates.
 
